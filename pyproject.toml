@@ -1,4 +1,4 @@
-[tool.pyright]
+[tool.basedpyright]
 pythonVersion = "3.8"
 
-reportImplicitOverride = "none"
+reportUnannotatedClassAttribute = "none"

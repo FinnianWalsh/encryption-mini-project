@@ -1,7 +1,7 @@
 import sys
 
 from random import randint
-from typing import Callable, List, Union, final
+from typing import Callable, List, Union
 
 Cipher = Callable[[], object]
 
@@ -120,7 +120,6 @@ def vernam(
     return "".join(buf)
 
 
-@final
 class Option:
     def __init__(
         self,
