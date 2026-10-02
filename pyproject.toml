@@ -1,2 +1,4 @@
 [tool.pyright]
 pythonVersion = "3.8"
+
+reportImplicitOverride = "none"
