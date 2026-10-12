@@ -1,7 +1,7 @@
 import sys
 
 from random import randint
-from typing import Callable, List, Union
+from typing import Callable, List, Optional
 
 from utils import Option, select_option
 
@@ -48,8 +48,8 @@ def printable_shift(ch: str, shift: int):
 
 
 def caesar(
-    text: Union[str, None] = None,
-    shift: Union[int, None] = None,
+    text: Optional[str] = None,
+    shift: Optional[int] = None,
     shift_method: Callable[[str, int], str] = letter_shift,
 ):
     if text is None:
@@ -94,8 +94,8 @@ def xor_printable_chars(a: str, b: str):
 
 
 def vernam(
-    text: Union[str, None] = None,
-    pad: Union[str, None] = None,
+    text: Optional[str] = None,
+    pad: Optional[str] = None,
     char_xor: Callable[[str, str], str] = lambda a, b: chr(ord(a) ^ ord(b)),
 ):
     if text is None:
@@ -118,9 +118,8 @@ def vernam(
 
     for idx, ch in enumerate(text):
         buf.append(char_xor(ch, pad[idx]))
-
+        
     return "".join(buf)
-
 
 
 menu_options = [
